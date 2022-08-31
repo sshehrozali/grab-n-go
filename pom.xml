@@ -75,10 +75,10 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/items-api-v1.yaml</inputSpec>
 							<language>java</language>
 							<configOptions>
-								<sourceFolder>src/gen/java/main</sourceFolder>
+								<sourceFolder>generated-resources</sourceFolder>
 							</configOptions>
 						</configuration>
 					</execution>
