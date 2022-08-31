@@ -1,4 +1,6 @@
 package com.sadapay.sadaparcel.customer.items;
 
-public interface ItemRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ItemRepository extends JpaRepository {
 }
