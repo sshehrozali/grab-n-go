@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 // items-management-line schema
 @Entity
-@Table
+@Table(name = "lines")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
