@@ -17,9 +17,9 @@ import javax.persistence.*;
 @Setter
 public class ItemsManagementLineSchema {
     @Id
-    private int id;
+    private Integer id;
     @OneToOne(cascade = CascadeType.ALL)
     private ItemsManagementSchema item;    // Item
     @NotNull
-    private int quantity;
+    private int quantity;   // Quantity of Item
 }

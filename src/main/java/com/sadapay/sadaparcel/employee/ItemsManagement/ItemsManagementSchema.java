@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class ItemsManagementSchema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @NotNull
     private String name;
     @NotNull
