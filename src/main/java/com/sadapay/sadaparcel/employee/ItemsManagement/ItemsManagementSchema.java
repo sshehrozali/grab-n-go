@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 // items-management-item schema
 @Entity
-@Table
+@Table(name = "items")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
