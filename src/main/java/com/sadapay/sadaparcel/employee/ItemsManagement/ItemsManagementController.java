@@ -2,10 +2,7 @@ package com.sadapay.sadaparcel.employee.ItemsManagement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,9 +23,15 @@ public class ItemsManagementController {
         return itemsManagementService.fetchAllItems();
     }
 
-    // POST request to add new item to inventory which is not already added
+    // POST request to add new items to inventory
     @PostMapping("/api/items-management/add")
-    public ResponseEntity<ItemsManagementLineSchema> addItem(@RequestBody ItemsManagementLineSchema itemsManagementLineSchema) {
-        return itemsManagementService.addNewItem(itemsManagementLineSchema);
+    public ResponseEntity<List<ItemsManagementLineSchema>> addItem(@RequestBody List<ItemsManagementLineSchema> itemsManagementLineSchemaList) {
+        return itemsManagementService.addNewItem(itemsManagementLineSchemaList);
+    }
+
+    // DELETE request to delete items from inventory by their Ids
+    @DeleteMapping("/api/items-management/delete")
+    public ResponseEntity<ItemsDeleteModel> deleteItems(@RequestBody ItemsDeleteModel itemIds) {
+        return itemsManagementService.deleteItemsByIds(itemIds);
     }
 }
