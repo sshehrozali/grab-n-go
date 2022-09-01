@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class ItemController {
+public class ItemsController {
 
     @Autowired
-    private ItemService itemService;
+    private ItemsService itemsService;
 
     @GetMapping("/api/public/test")
     public String testPublicAPI() {
@@ -19,7 +19,7 @@ public class ItemController {
     }
 
     @GetMapping("/api/items")
-    public ResponseEntity<List<LineModel>> getItems() {
-        return itemService.getAllItems();
+    public ResponseEntity<List<ItemsLineModel>> getItems() {
+        return itemsService.getAllItems();
     }
 }

@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ItemService {
+public class ItemsService {
 
     @Autowired
     private ItemsManagementRepository itemsManagementRepository;
 
-    public ResponseEntity<List<LineModel>> getAllItems() {
-        List<LineModel> itemsList = new ArrayList<>();
+    public ResponseEntity<List<ItemsLineModel>> getAllItems() {
+        List<ItemsLineModel> itemsList = new ArrayList<>();
 
         List<ItemsManagementLineEntity> lineEntities = itemsManagementRepository.findAll();
         for (ItemsManagementLineEntity lineEntity : lineEntities) {
@@ -27,19 +27,19 @@ public class ItemService {
             final Integer price = lineEntity.getItem().getPrice();
             final Integer quantity = lineEntity.getQuantity();
 
-            ItemModel itemModel = new ItemModel();
-            itemModel.setId(id);
-            itemModel.setName(name);
-            itemModel.setDescription(description);
-            itemModel.setPrice(price);
+            ItemsItemModel itemsItemModel = new ItemsItemModel();
+            itemsItemModel.setId(id);
+            itemsItemModel.setName(name);
+            itemsItemModel.setDescription(description);
+            itemsItemModel.setPrice(price);
 
-            LineModel lineModel = new LineModel();
-            lineModel.setItem(itemModel);
-            lineModel.setQuantity(quantity);
+            ItemsLineModel itemsLineModel = new ItemsLineModel();
+            itemsLineModel.setItem(itemsItemModel);
+            itemsLineModel.setQuantity(quantity);
 
-            itemsList.add(lineModel);
+            itemsList.add(itemsLineModel);
         }
 
-        return new ResponseEntity<List<LineModel>>(itemsList, HttpStatus.OK);
+        return new ResponseEntity<List<ItemsLineModel>>(itemsList, HttpStatus.OK);
     }
 }

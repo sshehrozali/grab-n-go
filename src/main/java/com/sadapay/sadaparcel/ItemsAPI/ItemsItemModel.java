@@ -4,7 +4,7 @@ import lombok.Data;
 
 // Item schema for public user
 @Data
-public class ItemModel {
+public class ItemsItemModel {
     private Integer id;
     private String name;
     private String description;
