@@ -30,8 +30,8 @@ public class ItemsManagementService {
     }
 
     // Method to delete items from inventory by their Ids
-    public ResponseEntity<ItemsDeleteModel> deleteItemsByIds(ItemsDeleteModel itemIds) {
+    public ResponseEntity<ItemsManagementDeleteModel> deleteItemsByIds(ItemsManagementDeleteModel itemIds) {
         itemsManagementRepository.deleteAllById(itemIds.getItemIds());  // Delete all items by their Ids
-        return new ResponseEntity<ItemsDeleteModel>(itemIds, HttpStatus.OK); // return list of deleted item Ids
+        return new ResponseEntity<ItemsManagementDeleteModel>(itemIds, HttpStatus.OK); // return list of deleted item Ids
     }
 }

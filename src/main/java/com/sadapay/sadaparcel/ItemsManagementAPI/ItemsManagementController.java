@@ -31,7 +31,7 @@ public class ItemsManagementController {
 
     // DELETE request to delete items from inventory by their Ids
     @DeleteMapping("/api/items-management/delete")
-    public ResponseEntity<ItemsDeleteModel> deleteItems(@RequestBody ItemsDeleteModel itemIds) {
+    public ResponseEntity<ItemsManagementDeleteModel> deleteItems(@RequestBody ItemsManagementDeleteModel itemIds) {
         return itemsManagementService.deleteItemsByIds(itemIds);
     }
 }
