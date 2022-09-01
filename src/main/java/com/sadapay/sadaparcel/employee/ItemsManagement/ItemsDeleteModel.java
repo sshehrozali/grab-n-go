@@ -2,7 +2,9 @@ package com.sadapay.sadaparcel.employee.ItemsManagement;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class ItemsDeleteModel {
-    private String[] itemsIds;
+    private List<Integer> itemIds;
 }
