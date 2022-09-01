@@ -24,8 +24,14 @@ public class ItemsManagementService {
         }
     }
 
-    // Method to save new item to inventory
-    public ResponseEntity<ItemsManagementLineSchema> addNewItem(ItemsManagementLineSchema itemsManagementLineSchema) {
-        return new ResponseEntity<ItemsManagementLineSchema>(itemsManagementRepository.save(itemsManagementLineSchema), HttpStatus.OK);
+    // Method to save new items in inventory
+    public ResponseEntity<List<ItemsManagementLineSchema>> addNewItem(List<ItemsManagementLineSchema> itemsManagementLineSchemaList) {
+        return new ResponseEntity<List<ItemsManagementLineSchema>>(itemsManagementRepository.saveAll(itemsManagementLineSchemaList), HttpStatus.OK);
+    }
+
+    // Method to delete items from inventory by their Ids
+    public ResponseEntity<ItemsDeleteModel> deleteItemsByIds(ItemsDeleteModel itemIds) {
+        itemsManagementRepository.deleteAllById(itemIds.getItemIds());  // Delete all items by their Ids
+        return new ResponseEntity<ItemsDeleteModel>(itemIds, HttpStatus.OK); // return list of deleted item Ids
     }
 }
