@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.employee.ItemsManagement;
+package com.sadapay.sadaparcel.ItemsManagementAPI;
 
 import lombok.Data;
 

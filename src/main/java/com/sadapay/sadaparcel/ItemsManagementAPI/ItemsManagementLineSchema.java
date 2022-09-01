@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.employee.ItemsManagement;
+package com.sadapay.sadaparcel.ItemsManagementAPI;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
