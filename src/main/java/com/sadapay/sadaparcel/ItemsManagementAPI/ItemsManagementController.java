@@ -12,7 +12,7 @@ public class ItemsManagementController {
     @Autowired
     private ItemsManagementService itemsManagementService;
 
-    @GetMapping("/api/test")
+    @GetMapping("/api/internal/test")
     public String testAPI() {
         return "Test success 200";
     }
