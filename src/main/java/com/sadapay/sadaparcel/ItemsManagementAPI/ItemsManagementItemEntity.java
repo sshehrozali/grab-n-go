@@ -8,18 +8,23 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-// items-management-line schema
+// items-management-item schema
 @Entity
-@Table(name = "lines")
+@Table(name = "items")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class ItemsManagementLineSchema {
+public class ItemsManagementItemEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToOne(cascade = CascadeType.ALL)
-    private ItemsManagementSchema item;    // Item
     @NotNull
-    private int quantity;   // Quantity of Item
+    private String name;
+    @NotNull
+    private String description;
+    @NotNull
+    private Integer price;
+    @NotNull
+    private Integer cost;
 }

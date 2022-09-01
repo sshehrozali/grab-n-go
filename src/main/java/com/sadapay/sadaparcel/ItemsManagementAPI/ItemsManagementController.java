@@ -19,14 +19,14 @@ public class ItemsManagementController {
 
     // GET request to fetch all items
     @GetMapping("/api/items-management/fetch")
-    public ResponseEntity<List<ItemsManagementLineSchema>> getAllItems() {
+    public ResponseEntity<List<ItemsManagementLineEntity>> getAllItems() {
         return itemsManagementService.fetchAllItems();
     }
 
     // POST request to add new items to inventory
     @PostMapping("/api/items-management/add")
-    public ResponseEntity<List<ItemsManagementLineSchema>> addItem(@RequestBody List<ItemsManagementLineSchema> itemsManagementLineSchemaList) {
-        return itemsManagementService.addNewItem(itemsManagementLineSchemaList);
+    public ResponseEntity<List<ItemsManagementLineEntity>> addItem(@RequestBody List<ItemsManagementLineEntity> itemsManagementLineEntityList) {
+        return itemsManagementService.addNewItem(itemsManagementLineEntityList);
     }
 
     // DELETE request to delete items from inventory by their Ids

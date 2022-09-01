@@ -14,19 +14,19 @@ public class ItemsManagementService {
 
 
     // Method to fetch all items available in inventory
-    public ResponseEntity<List<ItemsManagementLineSchema>> fetchAllItems() {
+    public ResponseEntity<List<ItemsManagementLineEntity>> fetchAllItems() {
         if (itemsManagementRepository.findAll().isEmpty()) {
             // If no items are available in inventory, return empty with response code NOT_FOUND
-            return new ResponseEntity<List<ItemsManagementLineSchema>>(itemsManagementRepository.findAll(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<List<ItemsManagementLineEntity>>(itemsManagementRepository.findAll(), HttpStatus.NOT_FOUND);
         } else {
             // Else return List of items with response code 200 OK
-            return new ResponseEntity<List<ItemsManagementLineSchema>>(itemsManagementRepository.findAll(), HttpStatus.OK);
+            return new ResponseEntity<List<ItemsManagementLineEntity>>(itemsManagementRepository.findAll(), HttpStatus.OK);
         }
     }
 
     // Method to save new items in inventory
-    public ResponseEntity<List<ItemsManagementLineSchema>> addNewItem(List<ItemsManagementLineSchema> itemsManagementLineSchemaList) {
-        return new ResponseEntity<List<ItemsManagementLineSchema>>(itemsManagementRepository.saveAll(itemsManagementLineSchemaList), HttpStatus.OK);
+    public ResponseEntity<List<ItemsManagementLineEntity>> addNewItem(List<ItemsManagementLineEntity> itemsManagementLineEntityList) {
+        return new ResponseEntity<List<ItemsManagementLineEntity>>(itemsManagementRepository.saveAll(itemsManagementLineEntityList), HttpStatus.OK);
     }
 
     // Method to delete items from inventory by their Ids
