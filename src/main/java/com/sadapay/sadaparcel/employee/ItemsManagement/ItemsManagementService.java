@@ -23,4 +23,9 @@ public class ItemsManagementService {
             return new ResponseEntity<List<ItemsManagementLineSchema>>(itemsManagementRepository.findAll(), HttpStatus.OK);
         }
     }
+
+    // Method to save new item to inventory
+    public ResponseEntity<ItemsManagementLineSchema> addNewItem(ItemsManagementLineSchema itemsManagementLineSchema) {
+        return new ResponseEntity<ItemsManagementLineSchema>(itemsManagementRepository.save(itemsManagementLineSchema), HttpStatus.OK);
+    }
 }
