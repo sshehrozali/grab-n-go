@@ -1,6 +1,8 @@
 package com.sadapay.sadaparcel.employee.ItemsManagement;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ItemsManagementRepository extends JpaRepository {
+@Repository
+public interface ItemsManagementRepository extends JpaRepository<ItemsManagementLineSchema, Integer> {
 }
