@@ -1,10 +1,10 @@
-package com.sadapay.sadaparcel.ItemsAPI;
+package com.sadapay.sadaparcel.ItemAPI;
 
 import lombok.Data;
 
 // Line schema for public user (this will be returned as response body)
 @Data
-public class ItemsLineModel {
-    private ItemsItemModel item;
+public class ItemLineModel {
+    private ItemItemModel item;
     private Integer quantity;
 }

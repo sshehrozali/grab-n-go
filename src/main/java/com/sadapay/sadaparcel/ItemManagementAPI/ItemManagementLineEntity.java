@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.ItemsManagementAPI;
+package com.sadapay.sadaparcel.ItemManagementAPI;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -15,11 +15,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ItemsManagementLineEntity {
+public class ItemManagementLineEntity {
     @Id
     private Integer id;
     @OneToOne(cascade = CascadeType.ALL)
-    private ItemsManagementItemEntity item;    // Item
+    private ItemManagementItemEntity item;    // Item
     @NotNull
     private int quantity;   // Quantity of Item
 }

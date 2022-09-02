@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.ItemsManagementAPI;
+package com.sadapay.sadaparcel.ItemManagementAPI;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ItemsManagementItemEntity {
+public class ItemManagementItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

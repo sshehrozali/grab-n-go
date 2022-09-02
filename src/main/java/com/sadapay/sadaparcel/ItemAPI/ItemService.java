@@ -1,7 +1,7 @@
-package com.sadapay.sadaparcel.ItemsAPI;
+package com.sadapay.sadaparcel.ItemAPI;
 
-import com.sadapay.sadaparcel.ItemsManagementAPI.ItemsManagementLineEntity;
-import com.sadapay.sadaparcel.ItemsManagementAPI.ItemsManagementRepository;
+import com.sadapay.sadaparcel.ItemManagementAPI.ItemManagementLineEntity;
+import com.sadapay.sadaparcel.ItemManagementAPI.ItemsManagementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,17 +11,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ItemsService {
+public class ItemService {
 
     @Autowired
     private ItemsManagementRepository itemsManagementRepository;
 
-    public ResponseEntity<List<ItemsLineModel>> getAllItems() {
+    public ResponseEntity<List<ItemLineModel>> getAllItems() {
         // List of type ItemsLineModel
-        List<ItemsLineModel> itemsList = new ArrayList<>();
+        List<ItemLineModel> itemsList = new ArrayList<>();
 
         // Fetch all items from Internal database - ItemsManagementLineEntity
-        List<ItemsManagementLineEntity> lineEntities = itemsManagementRepository.findAll();
+        List<ItemManagementLineEntity> lineEntities = itemsManagementRepository.findAll();
 
         // NOT PRODUCTION READY - SERVER LATENCY will be high for Fetching higher number of items
         // Iterate through List of type ItemsManagementLineEntity
@@ -29,27 +29,27 @@ public class ItemsService {
         // Create new ItemsItemModel object, assign values
         // Create ItemsLineModel object, assign values
         // Append ItemsLineModel object in List of type ItemsLineModel
-        for (ItemsManagementLineEntity lineEntity : lineEntities) {
+        for (ItemManagementLineEntity lineEntity : lineEntities) {
             final Integer id = lineEntity.getItem().getId();
             final String name = lineEntity.getItem().getName();
             final String description = lineEntity.getItem().getDescription();
             final Integer price = lineEntity.getItem().getPrice();
             final Integer quantity = lineEntity.getQuantity();
 
-            ItemsItemModel itemsItemModel = new ItemsItemModel();
-            itemsItemModel.setId(id);
-            itemsItemModel.setName(name);
-            itemsItemModel.setDescription(description);
-            itemsItemModel.setPrice(price);
+            ItemItemModel itemItemModel = new ItemItemModel();
+            itemItemModel.setId(id);
+            itemItemModel.setName(name);
+            itemItemModel.setDescription(description);
+            itemItemModel.setPrice(price);
 
-            ItemsLineModel itemsLineModel = new ItemsLineModel();
-            itemsLineModel.setItem(itemsItemModel);
-            itemsLineModel.setQuantity(quantity);
+            ItemLineModel itemLineModel = new ItemLineModel();
+            itemLineModel.setItem(itemItemModel);
+            itemLineModel.setQuantity(quantity);
 
-            itemsList.add(itemsLineModel);
+            itemsList.add(itemLineModel);
         }
 
         // When done fetching and conversion, return with response 200
-        return new ResponseEntity<List<ItemsLineModel>>(itemsList, HttpStatus.OK);
+        return new ResponseEntity<List<ItemLineModel>>(itemsList, HttpStatus.OK);
     }
 }

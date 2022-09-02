@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.ItemsAPI;
+package com.sadapay.sadaparcel.ItemAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class ItemsController {
+public class ItemController {
 
     @Autowired
-    private ItemsService itemsService;
+    private ItemService itemService;
 
     @GetMapping("/api/public/test")
     public String testPublicAPI() {
@@ -19,7 +19,7 @@ public class ItemsController {
     }
 
     @GetMapping("/api/items")
-    public ResponseEntity<List<ItemsLineModel>> getItems() {
-        return itemsService.getAllItems();
+    public ResponseEntity<List<ItemLineModel>> getItems() {
+        return itemService.getAllItems();
     }
 }

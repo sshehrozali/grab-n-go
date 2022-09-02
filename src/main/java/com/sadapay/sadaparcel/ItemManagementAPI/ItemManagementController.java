@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.ItemsManagementAPI;
+package com.sadapay.sadaparcel.ItemManagementAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ItemsManagementController {
+public class ItemManagementController {
 
     @Autowired
     private ItemsManagementService itemsManagementService;
@@ -19,19 +19,19 @@ public class ItemsManagementController {
 
     // GET request to fetch all items
     @GetMapping("/api/items-management/fetch")
-    public ResponseEntity<List<ItemsManagementLineEntity>> getAllItems() {
+    public ResponseEntity<List<ItemManagementLineEntity>> getAllItems() {
         return itemsManagementService.fetchAllItems();
     }
 
     // POST request to add new items to inventory
     @PostMapping("/api/items-management/add")
-    public ResponseEntity<List<ItemsManagementLineEntity>> addItem(@RequestBody List<ItemsManagementLineEntity> itemsManagementLineEntityList) {
-        return itemsManagementService.addNewItem(itemsManagementLineEntityList);
+    public ResponseEntity<List<ItemManagementLineEntity>> addItem(@RequestBody List<ItemManagementLineEntity> itemManagementLineEntityList) {
+        return itemsManagementService.addNewItem(itemManagementLineEntityList);
     }
 
     // DELETE request to delete items from inventory by their Ids
     @DeleteMapping("/api/items-management/delete")
-    public ResponseEntity<ItemsManagementDeleteModel> deleteItems(@RequestBody ItemsManagementDeleteModel itemIds) {
+    public ResponseEntity<ItemManagementDeleteModel> deleteItems(@RequestBody ItemManagementDeleteModel itemIds) {
         return itemsManagementService.deleteItemsByIds(itemIds);
     }
 }
