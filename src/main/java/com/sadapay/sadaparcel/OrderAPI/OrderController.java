@@ -21,7 +21,7 @@ public class OrderController {
     }
 
     // POST request to place new Orders
-    @PostMapping("/api/order/place")
+    @PostMapping("/api/orders/place")
     public ResponseEntity<List<OrderEntity>> placeOrder(@RequestBody List<OrderEntity> orderEntities) {
         return orderService.placeNewOrders(orderEntities);
     }
