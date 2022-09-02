@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import java.util.List;
 public class OrderEntity {
     @Id
     private String id;  // primary key
-    private List<OrderItemEntity> orderItems; // OrderItemEntity -> establish relationship here
+    @OneToMany
+    private List<OrderItemEntity> orderItems; // Each Order can have multiple Order Items (One-to-Many)
     private List<OrderOfferEntity> orderOffers; // OrderOfferEntity -> establish relationship here
 }
