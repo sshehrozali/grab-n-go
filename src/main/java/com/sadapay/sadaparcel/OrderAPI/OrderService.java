@@ -14,7 +14,7 @@ public class OrderService {
     private OrderRepository orderRepository;
 
     // Method that will save List of OrderEntity in database
-    public ResponseEntity<List<OrderEntity>> placeNewOrder(List<OrderEntity> orderEntities) {
+    public ResponseEntity<List<OrderEntity>> placeNewOrders(List<OrderEntity> orderEntities) {
         return new ResponseEntity<>(orderRepository.saveAll(orderEntities), HttpStatus.OK);     // return 200 OK
     }
 }

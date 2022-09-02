@@ -23,6 +23,6 @@ public class OrderController {
     // POST request to place new Orders
     @PostMapping("/api/order/place")
     public ResponseEntity<List<OrderEntity>> placeOrder(@RequestBody List<OrderEntity> orderEntities) {
-        return orderService.placeNewOrder(orderEntities);
+        return orderService.placeNewOrders(orderEntities);
     }
 }
