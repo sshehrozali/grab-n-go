@@ -17,9 +17,18 @@ public class ItemsService {
     private ItemsManagementRepository itemsManagementRepository;
 
     public ResponseEntity<List<ItemsLineModel>> getAllItems() {
+        // List of type ItemsLineModel
         List<ItemsLineModel> itemsList = new ArrayList<>();
 
+        // Fetch all items from Internal database - ItemsManagementLineEntity
         List<ItemsManagementLineEntity> lineEntities = itemsManagementRepository.findAll();
+
+        // NOT PRODUCTION READY - SERVER LATENCY will be high for Fetching higher number of items
+        // Iterate through List of type ItemsManagementLineEntity
+        // Get each ItemsManagementLineEntity object and store each item's attribute
+        // Create new ItemsItemModel object, assign values
+        // Create ItemsLineModel object, assign values
+        // Append ItemsLineModel object in List of type ItemsLineModel
         for (ItemsManagementLineEntity lineEntity : lineEntities) {
             final Integer id = lineEntity.getItem().getId();
             final String name = lineEntity.getItem().getName();
@@ -40,6 +49,7 @@ public class ItemsService {
             itemsList.add(itemsLineModel);
         }
 
+        // When done fetching and conversion, return with response 200
         return new ResponseEntity<List<ItemsLineModel>>(itemsList, HttpStatus.OK);
     }
 }
