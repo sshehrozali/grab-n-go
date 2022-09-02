@@ -18,7 +18,7 @@ public class OrderOfferEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;     // primary key
-    private Integer itemId; // Will store itemId upon which current offer is ongoing
+    private String itemId; // itemId reference to item on which offer is valid
     private Integer priceReduction;
     private Integer quantityThreshold;
 }
