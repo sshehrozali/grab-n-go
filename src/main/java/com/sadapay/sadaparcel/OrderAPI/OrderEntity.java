@@ -17,8 +17,8 @@ import java.util.List;
 public class OrderEntity {
     @Id
     private String id;  // primary key
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)      // Means when Order is created -> Order Item will also be created
     private List<OrderItemEntity> orderItems; // Each Order can have multiple Order Items (One-to-Many)
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)       // Means when Order is created -> Order Offer will also be created
     private List<OrderOfferEntity> orderOffers; // Each Order can have multiple number of offers because of multiple number of Order Items (One-to-Many)
 }
