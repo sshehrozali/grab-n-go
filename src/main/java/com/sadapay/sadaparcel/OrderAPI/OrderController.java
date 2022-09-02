@@ -1,6 +1,7 @@
 package com.sadapay.sadaparcel.OrderAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +20,9 @@ public class OrderController {
         return "Test Success Orders API 200";
     }
 
+    // POST request to place new Orders
     @PostMapping("/api/order/place")
-    public List<OrderEntity> placeOrder(@RequestBody List<OrderEntity> orderEntities) {
-        return
+    public ResponseEntity<List<OrderEntity>> placeOrder(@RequestBody List<OrderEntity> orderEntities) {
+        return orderService.placeNewOrder(orderEntities);
     }
 }
