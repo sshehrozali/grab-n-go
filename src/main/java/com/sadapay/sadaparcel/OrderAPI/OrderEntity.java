@@ -22,5 +22,6 @@ public class OrderEntity {
     private String id;  // primary key
     @OneToMany
     private List<OrderItemEntity> orderItems; // Each Order can have multiple Order Items (One-to-Many)
-    private List<OrderOfferEntity> orderOffers; // OrderOfferEntity -> establish relationship here
+    @OneToMany
+    private List<OrderOfferEntity> orderOffers; // Each Order can have multiple number of offers because of multiple number of Order Items (One-to-Many)
 }
