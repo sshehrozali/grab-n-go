@@ -2,10 +2,7 @@ package com.sadapay.sadaparcel.OrderAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,6 +15,12 @@ public class OrderController {
     @GetMapping("/api/public/orders/test")
     public String testOrdersAPI() {
         return "Test Success Orders API 200";
+    }
+
+    // GET request to get all Orders by their Ids
+    @GetMapping("/api/orders")
+    public ResponseEntity<List<OrderEntity>> getOrders(@RequestParam List<String> values) {
+        return orderService.getOrdersById(values);
     }
 
     // POST request to place new Orders
