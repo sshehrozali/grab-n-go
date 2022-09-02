@@ -1,0 +1,23 @@
+POST localhost:8080/api/orders/place
+Content-Type: application/json
+
+[
+  {
+    "id": "order2",
+    "orderItems": [
+      {
+        "id": "item3",
+        "name": "Third Item",
+        "originalPrice": 100,
+        "discountedPrice": 90
+      }
+    ],
+    "orderOffers": [
+      {
+        "itemId": "item3",
+        "priceReduction": 10,
+        "quantityThreshold": 2
+      }
+    ]
+  }
+]
