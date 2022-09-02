@@ -1,20 +1,24 @@
+GET localhost:8080/api/orders?values=order2,order4
+
+###
+
 POST localhost:8080/api/orders/place
 Content-Type: application/json
 
 [
   {
-    "id": "order2",
+    "id": "order4",
     "orderItems": [
       {
-        "id": "item3",
-        "name": "Third Item",
+        "id": "item4",
+        "name": "Forth Item",
         "originalPrice": 100,
         "discountedPrice": 90
       }
     ],
     "orderOffers": [
       {
-        "itemId": "item3",
+        "itemId": "item4",
         "priceReduction": 10,
         "quantityThreshold": 2
       }
