@@ -17,6 +17,12 @@ public class OfferManagementController {
         return "Test success 200 Offer Management API";
     }
 
+    // GET request to get all offers
+    @GetMapping("/api/get/offers")
+    public ResponseEntity<List<OfferManagementEntity>> getOffers() {
+        return offerManagementService.getAllOffers();
+    }
+
     // POST request to upload all offers
     @PostMapping("/api/upload/offers")
     public ResponseEntity<List<OfferManagementEntity>> uploadOffers(@RequestBody List<OfferManagementEntity> offerManagementEntities) {

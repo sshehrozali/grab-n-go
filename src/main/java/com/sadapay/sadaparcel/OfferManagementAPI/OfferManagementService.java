@@ -13,6 +13,11 @@ public class OfferManagementService {
     @Autowired
     private OfferManagementRepository offerManagementRepository;
 
+    // Method that will return List of OfferManagementEntity from database
+    public ResponseEntity<List<OfferManagementEntity>> getAllOffers() {
+        return new ResponseEntity<>(offerManagementRepository.findAll(), HttpStatus.OK);
+    }
+
     // Method that will upload all offers
     public ResponseEntity<List<OfferManagementEntity>> uploadAllNewOffers(List<OfferManagementEntity> offerManagementEntities) {
         return new ResponseEntity<>(offerManagementRepository.saveAll(offerManagementEntities), HttpStatus.OK);
