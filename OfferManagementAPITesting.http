@@ -1,0 +1,25 @@
+GET localhost:8080/api/internal/offer/test
+
+###
+
+POST localhost:8080/api/upload/offers
+Content-Type: application/json
+
+[
+  {
+    "id": "offer1",
+    "name": "offer1 for item1",
+    "itemId": "item1",
+    "priceReduction": 10,
+    "description": "Super Duper Amazing Offer for Item 1",
+    "quantityThreshold": 5
+  },
+  {
+    "id": "offer2",
+    "name": "offer2 for item2",
+    "itemId": "item2",
+    "priceReduction": 5,
+    "description": "Super Duper Amazing Offer for Item 2",
+    "quantityThreshold": 10
+  }
+]
