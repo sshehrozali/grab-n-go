@@ -2,10 +2,7 @@ package com.sadapay.sadaparcel.OfferManagementAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +21,10 @@ public class OfferManagementController {
     @PostMapping("/api/upload/offers")
     public ResponseEntity<List<OfferManagementEntity>> uploadOffers(@RequestBody List<OfferManagementEntity> offerManagementEntities) {
         return offerManagementService.uploadAllNewOffers(offerManagementEntities);
+    }
+
+    @DeleteMapping("/api/delete/offers")
+    public ResponseEntity<OfferManagementDeleteModel> deleteOffers(@RequestBody OfferManagementDeleteModel offerIdsToBeDeleted) {
+        return offerManagementService.deleteAllOffersByIds(offerIdsToBeDeleted);
     }
 }

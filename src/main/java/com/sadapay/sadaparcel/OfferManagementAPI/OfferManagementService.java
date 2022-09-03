@@ -17,4 +17,10 @@ public class OfferManagementService {
     public ResponseEntity<List<OfferManagementEntity>> uploadAllNewOffers(List<OfferManagementEntity> offerManagementEntities) {
         return new ResponseEntity<>(offerManagementRepository.saveAll(offerManagementEntities), HttpStatus.OK);
     }
+
+    // Method that will delete all offers from database by their Ids
+    public ResponseEntity<OfferManagementDeleteModel> deleteAllOffersByIds(OfferManagementDeleteModel offerIdsToBeDeleted) {
+        offerManagementRepository.deleteAllById(offerIdsToBeDeleted.getOfferIds()); // Delete all offers by their Ids
+        return new ResponseEntity<>(offerIdsToBeDeleted, HttpStatus.OK);    // return 200 OK
+    }
 }
