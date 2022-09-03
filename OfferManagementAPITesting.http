@@ -8,18 +8,18 @@ Content-Type: application/json
 [
   {
     "id": "offer1",
-    "name": "offer1 for item1",
+    "name": "Buy 1 Get 1 Free!",
     "itemId": "item1",
     "priceReduction": 10,
-    "description": "Super Duper Amazing Offer for Item 1",
+    "description": "Buy Item1 and Get another for FREE",
     "quantityThreshold": 5
   },
   {
     "id": "offer2",
-    "name": "offer2 for item2",
+    "name": "Flash Sale 50%",
     "itemId": "item2",
     "priceReduction": 5,
-    "description": "Super Duper Amazing Offer for Item 2",
+    "description": "Amazing Flash deal Available on Item 2",
     "quantityThreshold": 10
   }
 ]

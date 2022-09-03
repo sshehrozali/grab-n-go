@@ -7,19 +7,30 @@ Content-Type: application/json
 
 [
   {
-    "id": "order4",
+    "id": "order1",
     "orderItems": [
       {
-        "id": "item4",
-        "name": "Forth Item",
+        "id": "item1",
+        "name": "First Item",
         "originalPrice": 100,
         "discountedPrice": 90
+      },
+      {
+        "id": "item2",
+        "name": "Second Item",
+        "originalPrice": 50,
+        "discountedPrice": 45
       }
     ],
     "orderOffers": [
       {
-        "itemId": "item4",
+        "itemId": "item1",
         "priceReduction": 10,
+        "quantityThreshold": 2
+      },
+      {
+        "itemId": "item2",
+        "priceReduction": 5,
         "quantityThreshold": 2
       }
     ]
