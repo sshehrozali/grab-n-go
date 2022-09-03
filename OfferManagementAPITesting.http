@@ -23,3 +23,12 @@ Content-Type: application/json
     "quantityThreshold": 10
   }
 ]
+
+###
+
+DELETE localhost:8080/api/delete/offers
+Content-Type: application/json
+
+{
+  "offerIds": ["offer1"]
+}
