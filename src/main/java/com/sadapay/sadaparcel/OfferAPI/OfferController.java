@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class OfferController {
 
@@ -17,8 +19,9 @@ public class OfferController {
         return "Test success Offer API 200";
     }
 
+    // GET request to fetch all available offers
     @GetMapping("/api/offers")
     public ResponseEntity<List<OfferManagementEntity>> getOffers() {
-        return
+        return offerService.getAllOffers();
     }
 }
