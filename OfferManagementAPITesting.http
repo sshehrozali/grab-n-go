@@ -2,6 +2,10 @@ GET localhost:8080/api/internal/offer/test
 
 ###
 
+GET localhost:8080/api/get/offers
+
+###
+
 POST localhost:8080/api/upload/offers
 Content-Type: application/json
 
