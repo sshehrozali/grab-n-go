@@ -1,0 +1,5 @@
+GET localhost:8080/api/public/offer/test
+
+###
+
+GET localhost:8080/api/offers
