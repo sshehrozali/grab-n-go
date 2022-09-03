@@ -34,6 +34,8 @@
 * #### GET
   Uses `ItemManagementRepository` (internal) to query all offers. Maps each `ItemManagementLineEntity` (internal) to `ItemLineModel` (public) and returns `List<ItemLineModel>`
 
+<hr />
+
 ## Order API
 ### Database diagram
 ![Order API Database schema](SadaParcel%20-%20Order%20API.png "Title")
