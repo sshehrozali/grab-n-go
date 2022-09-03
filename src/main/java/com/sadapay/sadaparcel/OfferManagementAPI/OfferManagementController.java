@@ -23,6 +23,7 @@ public class OfferManagementController {
         return offerManagementService.uploadAllNewOffers(offerManagementEntities);
     }
 
+    // DELETE request to delete all offers by their Ids
     @DeleteMapping("/api/delete/offers")
     public ResponseEntity<OfferManagementDeleteModel> deleteOffers(@RequestBody OfferManagementDeleteModel offerIdsToBeDeleted) {
         return offerManagementService.deleteAllOffersByIds(offerIdsToBeDeleted);
