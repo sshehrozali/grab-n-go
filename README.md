@@ -10,6 +10,30 @@
 
 <hr /> 
 
+## Item Management API
+### Database Diagram
+![Item Management API Database schema](SadaParcel%20-%20ItemAPI__ItemManagementAPI.png "Title")
+
+### `ItemManagementLineEntity`
+![Item Management API - ItemManagementLineEntity](ItemManagementAPI%20-%20ItemManagementLineEntity.png "Title")
+
+### `ItemManagementItemEntity`
+![Item Management API - ItemManagementItemEntity](ItemManagementAPI%20-%20ItemManagementItemEntity.png "Title")
+
+* #### GET
+  Returns `List<ItemManagementLineEntity>`
+* #### POST
+  Accepts `@RequestBody` `List<ItemManagementLineEntity>`
+* #### DELETE
+  Accepts `@RequestBody` `ItemManagementDeleteModel` -> `List<Integer> itemIds`. Will delete all items with matching `itemIds.get()`
+
+<hr />
+
+## Item API
+**No Entity created**.
+* #### GET
+  Uses `ItemManagementRepository` (internal) to query all offers. Maps each `ItemManagementLineEntity` (internal) to `ItemLineModel` (public) and returns `List<ItemLineModel>`
+
 ## Order API
 ### Database diagram
 ![Order API Database schema](SadaParcel%20-%20Order%20API.png "Title")
@@ -29,11 +53,32 @@
 ### `OrderEntity` <--> `OrderOfferEntity` (Relationship)
 ![Order API - ORDER_ORDER_OFFER](OrderManagementAPI%20-%20Relationship2.png "Title")
 
+* #### GET
+  Accepts `@RequestParam` `List<String> values`. Returns matching `List<OrderEntity>`
+* #### POST
+  Accepts `@ResquestBody` `List<OrderEntity>`
+
 <hr />
 
 ## Offer Management API
 ### `OfferManagementEntity`
 ![Offer Management API - OfferManagementEntity](OfferManagementAPI%20-%20Entity.png "Title")
+
+* #### GET
+    Returns `List<OfferManagementEntity>`
+* #### POST
+    Accepts `@ResquestBody` `List<OfferManagementEntity>`
+* #### DELETE
+    Accepts `@RequestBody` `OfferManagementDeleteModel` -> `List<String> offerIds`
+
+<hr />
+
+## Offer API
+**No Entity created**.
+* #### GET
+    Uses `OfferManagementRepository` (internal) to query all offers and returns `List<OfferManagementEntity>`
+
+<hr />
 
 [//]: # (# Trade-offs)
 
