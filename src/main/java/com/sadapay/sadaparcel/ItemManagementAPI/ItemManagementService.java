@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,13 +46,17 @@ public class ItemManagementService {
 }
 
     // Method to delete items from inventory by their Ids if they are present
+    @Transactional  // indicate Spring that transaction is happening
     public ResponseEntity<ItemManagementDeleteModel> deleteItemsByIds(ItemManagementDeleteModel itemIds) {
         List<String> ids = itemIds.getItemIds();
         ids.forEach(id -> {
             // Query "items" table by itemId
             Optional<ItemManagementItemEntity> item = itemManagementItemRepository.findById(id);
             if (item.isPresent()) {
-                // If item is present -> Delete the item
+                // If item is present, delete from both tables separately, not optimal approach
+                // Delete from "lines" table -> by ITEM_ID
+                itemManagementLineRepository.deleteItemByItem_id(id);
+                // Delete from "items" table -> by ID
                 itemManagementItemRepository.deleteById(id);
             } else {
                 // If item not present -> Throw Error!
