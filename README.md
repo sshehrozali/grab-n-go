@@ -10,25 +10,7 @@
 
 <hr /> 
 
-## Item Management API
-### Database Diagram
-![Item Management API Database schema](SadaParcel%20-%20ItemAPI__ItemManagementAPI.png "Title")
-
-### `ItemManagementLineEntity`
-![Item Management API - ItemManagementLineEntity](ItemManagementAPI%20-%20ItemManagementLineEntity.png "Title")
-
-### `ItemManagementItemEntity`
-![Item Management API - ItemManagementItemEntity](ItemManagementAPI%20-%20ItemManagementItemEntity.png "Title")
-
-* #### GET
-  Returns `List<ItemManagementLineEntity>`
-* #### POST
-  Accepts `@RequestBody` `List<ItemManagementLineEntity>`
-* #### DELETE
-  Accepts `@RequestBody` `ItemManagementDeleteModel` -> `List<Integer> itemIds`. Will delete all items with matching `itemIds.get()`
-
-<hr />
-
+# Public
 ## Item API
 **No Entity created**.
 * #### GET
@@ -60,6 +42,33 @@
 * #### POST
   Accepts `@ResquestBody` `List<OrderEntity>`
 
+<hr /> 
+
+## Offer API
+**No Entity created**.
+* #### GET
+  Uses `OfferManagementRepository` (internal) to query all offers and returns `List<OfferManagementEntity>`
+
+<hr />
+
+# Internal
+## Item Management API
+### Database Diagram
+![Item Management API Database schema](SadaParcel%20-%20ItemAPI__ItemManagementAPI.png "Title")
+
+### `ItemManagementLineEntity`
+![Item Management API - ItemManagementLineEntity](ItemManagementAPI%20-%20ItemManagementLineEntity.png "Title")
+
+### `ItemManagementItemEntity`
+![Item Management API - ItemManagementItemEntity](ItemManagementAPI%20-%20ItemManagementItemEntity.png "Title")
+
+* #### GET
+  Returns `List<ItemManagementLineEntity>`
+* #### POST
+  Accepts `@RequestBody` `List<ItemManagementLineEntity>`
+* #### DELETE
+  Accepts `@RequestBody` `ItemManagementDeleteModel` -> `List<Integer> itemIds`. Will delete all items with matching `itemIds.get()`
+
 <hr />
 
 ## Offer Management API
@@ -75,12 +84,6 @@
 
 <hr />
 
-## Offer API
-**No Entity created**.
-* #### GET
-    Uses `OfferManagementRepository` (internal) to query all offers and returns `List<OfferManagementEntity>`
-
-<hr />
 
 [//]: # (# Trade-offs)
 

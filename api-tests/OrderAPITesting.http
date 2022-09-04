@@ -1,4 +1,4 @@
-GET localhost:8080/api/orders?values=order2,order4
+GET localhost:8080/api/orders?values=order1
 
 ###
 
@@ -7,16 +7,16 @@ Content-Type: application/json
 
 [
   {
-    "id": "order1",
+    "id": "order2",
     "orderItems": [
       {
-        "id": "item1",
+        "itemId": "item1",
         "name": "First Item",
         "originalPrice": 100,
         "discountedPrice": 90
       },
       {
-        "id": "item2",
+        "itemId": "item2",
         "name": "Second Item",
         "originalPrice": 50,
         "discountedPrice": 45
@@ -25,11 +25,13 @@ Content-Type: application/json
     "orderOffers": [
       {
         "itemId": "item1",
+        "offerId": "offer1",
         "priceReduction": 10,
         "quantityThreshold": 2
       },
       {
         "itemId": "item2",
+        "offerId": "offer2",
         "priceReduction": 5,
         "quantityThreshold": 2
       }

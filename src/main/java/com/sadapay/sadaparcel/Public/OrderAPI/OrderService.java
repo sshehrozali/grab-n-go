@@ -36,8 +36,17 @@ public class OrderService {
         return new ResponseEntity<>(orders, HttpStatus.OK); // return all orders with HTTP Status 200 OK
     }
 
-    // Method that will save List of OrderEntity in database
+    // Method that will save List of OrderEntity where each order is already not created
     public ResponseEntity<List<OrderEntity>> placeNewOrders(List<OrderEntity> orderEntities) {
-        return new ResponseEntity<>(orderRepository.saveAll(orderEntities), HttpStatus.OK);     // return 200 OK
+        orderEntities.forEach(order -> {
+            if (orderRepository.findById(order.getId()).isPresent()) {
+                // If order already created, don't create order
+                System.out.println("Order id: " + order.getId() + " already created!");
+            } else {
+                // If order not created, save order in database
+                orderRepository.save(order);
+            }
+        });
+        return new ResponseEntity<>(orderEntities, HttpStatus.OK);     // After saving order, return 200 OK
     }
 }
