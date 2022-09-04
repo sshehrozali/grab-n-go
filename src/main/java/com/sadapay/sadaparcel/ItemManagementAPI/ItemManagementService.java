@@ -10,6 +10,8 @@ import java.util.List;
 @Service
 public class ItemManagementService {
     @Autowired
+    private ItemManagementItemRepository itemManagementItemRepository;
+    @Autowired
     private ItemManagementLineRepository itemManagementLineRepository;
 
 
