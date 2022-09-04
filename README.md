@@ -20,22 +20,22 @@
 
 ## Order API
 ### Database diagram
-![Order API Database schema](SadaParcel%20-%20Order%20API.png "Title")
+![Order API Database schema](readme-images/SadaParcel%20-%20Order%20API.png "Title")
 
 ### `OrderEnity`
-![Order API - OrderEntity](OrderManagementAPI%20-%20OrderEntity.png "Title")
+![Order API - OrderEntity](readme-images/OrderManagementAPI%20-%20OrderEntity.png "Title")
 
 ### `OrderItemEnity`
-![Order API - OrderItemEntity](OrderManagementAPI%20-%20OrderItemEntity.png "Title")
+![Order API - OrderItemEntity](readme-images/OrderManagementAPI%20-%20OrderItemEntity.png "Title")
 
 ### `OrderOfferEnity`
-![Order API - OrderOfferEntity](OrderManagementAPI%20-%20OrderOfferEntity.png "Title")
+![Order API - OrderOfferEntity](readme-images/OrderManagementAPI%20-%20OrderOfferEntity.png "Title")
 
 ### `OrderEntity` <--> `OrderItemEntity` (Relationship)
-![Order API - ORDER_ORDER_ITEM](OrderManagementAPI%20-%20Relationship1.png "Title")
+![Order API - ORDER_ORDER_ITEM](readme-images/OrderManagementAPI%20-%20Relationship1.png "Title")
 
 ### `OrderEntity` <--> `OrderOfferEntity` (Relationship)
-![Order API - ORDER_ORDER_OFFER](OrderManagementAPI%20-%20Relationship2.png "Title")
+![Order API - ORDER_ORDER_OFFER](readme-images/OrderManagementAPI%20-%20Relationship2.png "Title")
 
 * #### GET
   Accepts `@RequestParam` `List<String> values`. Returns matching `List<OrderEntity>`
@@ -54,13 +54,13 @@
 # Internal
 ## Item Management API
 ### Database Diagram
-![Item Management API Database schema](SadaParcel%20-%20ItemAPI__ItemManagementAPI.png "Title")
+![Item Management API Database schema](readme-images/SadaParcel%20-%20ItemAPI__ItemManagementAPI.png "Title")
 
 ### `ItemManagementLineEntity`
-![Item Management API - ItemManagementLineEntity](ItemManagementAPI%20-%20ItemManagementLineEntity.png "Title")
+![Item Management API - ItemManagementLineEntity](readme-images/ItemManagementAPI%20-%20ItemManagementLineEntity.png "Title")
 
 ### `ItemManagementItemEntity`
-![Item Management API - ItemManagementItemEntity](ItemManagementAPI%20-%20ItemManagementItemEntity.png "Title")
+![Item Management API - ItemManagementItemEntity](readme-images/ItemManagementAPI%20-%20ItemManagementItemEntity.png "Title")
 
 * #### GET
   Returns `List<ItemManagementLineEntity>`
@@ -73,7 +73,7 @@
 
 ## Offer Management API
 ### `OfferManagementEntity`
-![Offer Management API - OfferManagementEntity](OfferManagementAPI%20-%20Entity.png "Title")
+![Offer Management API - OfferManagementEntity](readme-images/OfferManagementAPI%20-%20Entity.png "Title")
 
 * #### GET
     Returns `List<OfferManagementEntity>`
