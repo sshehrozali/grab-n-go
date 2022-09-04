@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.OrderAPI;
+package com.sadapay.sadaparcel.Public.OrderAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

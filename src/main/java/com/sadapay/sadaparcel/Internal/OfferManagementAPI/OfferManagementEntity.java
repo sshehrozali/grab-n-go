@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.OfferManagementAPI;
+package com.sadapay.sadaparcel.Internal.OfferManagementAPI;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

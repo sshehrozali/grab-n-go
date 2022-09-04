@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.ItemAPI;
+package com.sadapay.sadaparcel.Public.ItemAPI;
 
 import lombok.Data;
 

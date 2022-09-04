@@ -1,7 +1,7 @@
-package com.sadapay.sadaparcel.OfferAPI;
+package com.sadapay.sadaparcel.Public.OfferAPI;
 
-import com.sadapay.sadaparcel.OfferManagementAPI.OfferManagementEntity;
-import com.sadapay.sadaparcel.OfferManagementAPI.OfferManagementRepository;
+import com.sadapay.sadaparcel.Internal.OfferManagementAPI.OfferManagementEntity;
+import com.sadapay.sadaparcel.Internal.OfferManagementAPI.OfferManagementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

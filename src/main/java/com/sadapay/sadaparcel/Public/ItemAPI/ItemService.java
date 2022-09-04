@@ -1,7 +1,7 @@
-package com.sadapay.sadaparcel.ItemAPI;
+package com.sadapay.sadaparcel.Public.ItemAPI;
 
-import com.sadapay.sadaparcel.ItemManagementAPI.ItemManagementLineEntity;
-import com.sadapay.sadaparcel.ItemManagementAPI.ItemManagementLineRepository;
+import com.sadapay.sadaparcel.Internal.ItemManagementAPI.ItemManagementLineEntity;
+import com.sadapay.sadaparcel.Internal.ItemManagementAPI.ItemManagementLineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

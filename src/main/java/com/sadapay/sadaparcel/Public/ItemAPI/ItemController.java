@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.ItemAPI;
+package com.sadapay.sadaparcel.Public.ItemAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

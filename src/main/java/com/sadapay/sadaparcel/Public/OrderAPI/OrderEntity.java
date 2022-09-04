@@ -1,4 +1,4 @@
-package com.sadapay.sadaparcel.OrderAPI;
+package com.sadapay.sadaparcel.Public.OrderAPI;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
