@@ -17,8 +17,7 @@ import javax.persistence.*;
 @Setter
 public class ItemManagementItemEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String id;  // primary key - should be unique -> provided by user, no auto-generation
     @NotNull
     private String name;
     @NotNull

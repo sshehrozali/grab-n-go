@@ -17,9 +17,10 @@ import javax.persistence.*;
 @Setter
 public class ItemManagementLineEntity {
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)     // Automatically generates id for each record in table
+    private Integer id;     // primary key
     @OneToOne(cascade = CascadeType.ALL)
-    private ItemManagementItemEntity item;    // Item
+    private ItemManagementItemEntity item;    // Stores itemId
     @NotNull
-    private int quantity;   // Quantity of Item
+    private int quantity;   // Quantity of that item
 }
