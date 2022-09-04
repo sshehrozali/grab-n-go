@@ -1,7 +1,7 @@
 package com.sadapay.sadaparcel.ItemAPI;
 
 import com.sadapay.sadaparcel.ItemManagementAPI.ItemManagementLineEntity;
-import com.sadapay.sadaparcel.ItemManagementAPI.ItemsManagementRepository;
+import com.sadapay.sadaparcel.ItemManagementAPI.ItemManagementLineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +14,14 @@ import java.util.List;
 public class ItemService {
 
     @Autowired
-    private ItemsManagementRepository itemsManagementRepository;
+    private ItemManagementLineRepository itemManagementLineRepository;
 
     public ResponseEntity<List<ItemLineModel>> getAllItems() {
         // List of type ItemsLineModel
         List<ItemLineModel> itemsList = new ArrayList<>();
 
         // Fetch all items from Internal database - ItemsManagementLineEntity
-        List<ItemManagementLineEntity> lineEntities = itemsManagementRepository.findAll();
+        List<ItemManagementLineEntity> lineEntities = itemManagementLineRepository.findAll();
 
         // NOT PRODUCTION READY - SERVER LATENCY will be high for Fetching higher number of items
         // Iterate through List of type ItemsManagementLineEntity

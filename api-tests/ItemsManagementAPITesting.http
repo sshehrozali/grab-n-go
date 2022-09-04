@@ -11,24 +11,24 @@ Content-Type: application/json
 
 [
   {
-    "id": 1,
     "item": {
+      "id": "item1",
       "name": "First Item",
       "description": "Cool First Item",
-      "price": 100,
-      "cost": 90
-    },
-    "quantity": 5
-  },
-  {
-    "id": 2,
-    "item": {
-      "name": "Second Item",
-      "description": "Cool Second Item",
       "price": 20,
       "cost": 10
     },
     "quantity": 30
+  },
+  {
+    "item": {
+      "id": "item2",
+      "name": "Second Item",
+      "description": "Cool Third Item",
+      "price": 100,
+      "cost": 90
+    },
+    "quantity": 5
   }
 ]
 
@@ -38,5 +38,5 @@ DELETE localhost:8080/api/items-management/delete
 Content-Type: application/json
 
 {
-  "itemIds": [1]
+  "itemIds": ["item1"]
 }
