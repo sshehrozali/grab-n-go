@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class OrderController {
@@ -19,8 +20,8 @@ public class OrderController {
 
     // GET request to get all Orders by their Ids
     @GetMapping("/api/orders")
-    public ResponseEntity<List<OrderEntity>> getOrders(@RequestParam List<String> values) {
-        return orderService.getOrdersById(values);
+    public ResponseEntity<List<Optional<OrderEntity>>> getOrders(@RequestParam List<String> values) {
+        return orderService.getOrdersByIds(values);
     }
 
     // POST request to place new Orders
