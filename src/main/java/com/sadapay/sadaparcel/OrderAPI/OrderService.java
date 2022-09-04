@@ -20,7 +20,7 @@ public class OrderService {
         List<Optional<OrderEntity>> orders = new ArrayList<>();
         if (orderRepository.findAll().isEmpty()) {
             // If no Orders were placed yet, Throw Error!
-            System.out.println("No Order Found yet!");
+            System.out.println("No Orders Found yet!");
             return new ResponseEntity<>(orders, HttpStatus.NOT_FOUND);
         } else {
             values.forEach(order_id -> {
