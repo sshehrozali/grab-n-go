@@ -30,7 +30,7 @@ public class ItemService {
         // Create ItemsLineModel object, assign values
         // Append ItemsLineModel object in List of type ItemsLineModel
         for (ItemManagementLineEntity lineEntity : lineEntities) {
-            final Integer id = lineEntity.getItem().getId();
+            final String id = lineEntity.getItem().getId();
             final String name = lineEntity.getItem().getName();
             final String description = lineEntity.getItem().getDescription();
             final Integer price = lineEntity.getItem().getPrice();
