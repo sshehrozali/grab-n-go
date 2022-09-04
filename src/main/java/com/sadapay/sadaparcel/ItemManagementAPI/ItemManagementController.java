@@ -26,7 +26,7 @@ public class ItemManagementController {
     // POST request to add new items to inventory
     @PostMapping("/api/items-management/add")
     public ResponseEntity<List<ItemManagementLineEntity>> addItem(@RequestBody List<ItemManagementLineEntity> itemManagementLineEntityList) {
-        return itemsManagementService.addNewItem(itemManagementLineEntityList);
+        return itemsManagementService.addNewItems(itemManagementLineEntityList);
     }
 
     // DELETE request to delete items from inventory by their Ids
