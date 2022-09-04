@@ -17,8 +17,9 @@ import javax.persistence.*;
 public class OrderOfferEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;     // primary key
-    private String itemId; // itemId reference to item on which offer is valid
+    private Integer id;     // primary key -> auto-generation
+    private String offerId; // reference to offer
+    private String itemId; // reference to item
     private Integer priceReduction;
     private Integer quantityThreshold;
 }

@@ -15,7 +15,9 @@ import javax.persistence.*;
 @Setter
 public class OrderItemEntity {
     @Id
-    private String id; // primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id; // primary key -> auto-generated -> not provided by user
+    private String itemId;  // reference to item
     private String name;
     private Integer originalPrice;
     private Integer discountedPrice;
