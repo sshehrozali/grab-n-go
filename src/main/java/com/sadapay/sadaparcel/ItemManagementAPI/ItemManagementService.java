@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ItemManagementService {
@@ -26,15 +27,21 @@ public class ItemManagementService {
         }
     }
 
-    // Method to save new items in inventory
+    // Method to save new items to inventory that already don't exist
     public ResponseEntity<List<ItemManagementLineEntity>> addNewItems(List<ItemManagementLineEntity> itemManagementLineEntityList) {
-
-        // Query repository
-        // If TRUE -> item already exists -> throw Error
-        // If FALSE -> item doesn't exists -> Save in database
-
-        return new ResponseEntity<List<ItemManagementLineEntity>>(itemManagementLineRepository.saveAll(itemManagementLineEntityList), HttpStatus.OK);
-    }
+        itemManagementLineEntityList.forEach(itemManagementLineEntity -> {
+            // Query "items" table by itemId
+            Optional<ItemManagementItemEntity> item = itemManagementItemRepository.findById(itemManagementLineEntity.getItem().getId());
+            if (item.isEmpty()) {
+                // If item is already not stored -> Save item in database
+                itemManagementLineRepository.save(itemManagementLineEntity);
+            } else {
+                // If item is already stored -> Throw Error!
+                System.out.println("Item Already exists!");
+            }
+        });
+        return new ResponseEntity<>(itemManagementLineEntityList, HttpStatus.OK);   // After saving all items, return 200 OK
+}
 
     // Method to delete items from inventory by their Ids
     public ResponseEntity<ItemManagementDeleteModel> deleteItemsByIds(ItemManagementDeleteModel itemIds) {
