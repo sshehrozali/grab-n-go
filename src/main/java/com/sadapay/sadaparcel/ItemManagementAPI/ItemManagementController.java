@@ -10,7 +10,7 @@ import java.util.List;
 public class ItemManagementController {
 
     @Autowired
-    private ItemsManagementService itemsManagementService;
+    private ItemManagementService itemManagementService;
 
     @GetMapping("/api/internal/test")
     public String testAPI() {
@@ -20,18 +20,18 @@ public class ItemManagementController {
     // GET request to fetch all items
     @GetMapping("/api/items-management/fetch")
     public ResponseEntity<List<ItemManagementLineEntity>> getAllItems() {
-        return itemsManagementService.fetchAllItems();
+        return itemManagementService.fetchAllItems();
     }
 
     // POST request to add new items to inventory
     @PostMapping("/api/items-management/add")
     public ResponseEntity<List<ItemManagementLineEntity>> addItem(@RequestBody List<ItemManagementLineEntity> itemManagementLineEntityList) {
-        return itemsManagementService.addNewItems(itemManagementLineEntityList);
+        return itemManagementService.addNewItems(itemManagementLineEntityList);
     }
 
     // DELETE request to delete items from inventory by their Ids
     @DeleteMapping("/api/items-management/delete")
     public ResponseEntity<ItemManagementDeleteModel> deleteItems(@RequestBody ItemManagementDeleteModel itemIds) {
-        return itemsManagementService.deleteItemsByIds(itemIds);
+        return itemManagementService.deleteItemsByIds(itemIds);
     }
 }

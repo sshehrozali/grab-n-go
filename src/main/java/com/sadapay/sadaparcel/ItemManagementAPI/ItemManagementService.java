@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ItemsManagementService {
+public class ItemManagementService {
     @Autowired
     private ItemsManagementRepository itemsManagementRepository;
 
@@ -25,7 +25,7 @@ public class ItemsManagementService {
     }
 
     // Method to save new items in inventory
-    public ResponseEntity<List<ItemManagementLineEntity>> addNewItem(List<ItemManagementLineEntity> itemManagementLineEntityList) {
+    public ResponseEntity<List<ItemManagementLineEntity>> addNewItems(List<ItemManagementLineEntity> itemManagementLineEntityList) {
         return new ResponseEntity<List<ItemManagementLineEntity>>(itemsManagementRepository.saveAll(itemManagementLineEntityList), HttpStatus.OK);
     }
 
