@@ -19,11 +19,12 @@ public class ItemManagementService {
     // Method to fetch all items available in inventory
     public ResponseEntity<List<ItemManagementLineEntity>> fetchAllItems() {
         if (itemManagementLineRepository.findAll().isEmpty()) {
-            // If no items are available in inventory, return empty with response code NOT_FOUND
-            return new ResponseEntity<List<ItemManagementLineEntity>>(itemManagementLineRepository.findAll(), HttpStatus.NOT_FOUND);
+            // If no items available in database -> Display Message! -> HTTP Status NOT FOUND
+            System.out.println("No Items in Inventory!");
+            return new ResponseEntity<>(itemManagementLineRepository.findAll(), HttpStatus.NOT_FOUND);
         } else {
-            // Else return List of items with response code 200 OK
-            return new ResponseEntity<List<ItemManagementLineEntity>>(itemManagementLineRepository.findAll(), HttpStatus.OK);
+            // Else return all items with HTTP status 200
+            return new ResponseEntity<>(itemManagementLineRepository.findAll(), HttpStatus.OK);
         }
     }
 
