@@ -6,5 +6,5 @@ import java.util.List;
 
 @Data
 public class ItemManagementDeleteModel {
-    private List<Integer> itemIds;
+    private List<String> itemIds;
 }

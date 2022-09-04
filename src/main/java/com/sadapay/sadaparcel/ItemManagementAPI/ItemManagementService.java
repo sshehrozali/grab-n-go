@@ -46,13 +46,13 @@ public class ItemManagementService {
 
     // Method to delete items from inventory by their Ids if they are present
     public ResponseEntity<ItemManagementDeleteModel> deleteItemsByIds(ItemManagementDeleteModel itemIds) {
-        List<Integer> ids = itemIds.getItemIds();
+        List<String> ids = itemIds.getItemIds();
         ids.forEach(id -> {
             // Query "items" table by itemId
-            Optional<ItemManagementItemEntity> item = itemManagementItemRepository.findById(id.toString());
+            Optional<ItemManagementItemEntity> item = itemManagementItemRepository.findById(id);
             if (item.isPresent()) {
                 // If item is present -> Delete the item
-                itemManagementItemRepository.deleteById(id.toString());
+                itemManagementItemRepository.deleteById(id);
             } else {
                 // If item not present -> Throw Error!
                 System.out.println("Item not present by the given Id!");
