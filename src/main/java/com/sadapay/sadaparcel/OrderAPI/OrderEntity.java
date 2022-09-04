@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 public class OrderEntity {
     @Id
-    private String id;  // primary key
+    private String id;  // primary key, must be unique, provided by user
     @OneToMany(cascade = CascadeType.ALL)      // Means when Order is created -> Order Item will also be created
     private List<OrderItemEntity> orderItems; // Each Order can have multiple Order Items (One-to-Many)
     @OneToMany(cascade = CascadeType.ALL)       // Means when Order is created -> Order Offer will also be created
