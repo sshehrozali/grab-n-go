@@ -44,9 +44,20 @@ public class ItemManagementService {
         return new ResponseEntity<>(itemManagementLineEntityList, HttpStatus.OK);   // After saving all items, return 200 OK
 }
 
-    // Method to delete items from inventory by their Ids
+    // Method to delete items from inventory by their Ids if they are present
     public ResponseEntity<ItemManagementDeleteModel> deleteItemsByIds(ItemManagementDeleteModel itemIds) {
-        itemManagementLineRepository.deleteAllById(itemIds.getItemIds());  // Delete all items by their Ids
-        return new ResponseEntity<ItemManagementDeleteModel>(itemIds, HttpStatus.OK); // return list of deleted item Ids
+        List<Integer> ids = itemIds.getItemIds();
+        ids.forEach(id -> {
+            // Query "items" table by itemId
+            Optional<ItemManagementItemEntity> item = itemManagementItemRepository.findById(id.toString());
+            if (item.isPresent()) {
+                // If item is present -> Delete the item
+                itemManagementItemRepository.deleteById(id.toString());
+            } else {
+                // If item not present -> Throw Error!
+                System.out.println("Item not present by the given Id!");
+            }
+        });
+        return new ResponseEntity<>(itemIds, HttpStatus.OK);    // After deleting, return 200 OK
     }
 }
