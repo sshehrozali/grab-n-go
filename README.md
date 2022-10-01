@@ -17,10 +17,11 @@
   Uses `ItemManagementRepository` (internal) to query all offers. Maps each `ItemManagementLineEntity` (internal) to `ItemLineModel` (public) and returns `List<ItemLineModel>`
 
 <hr />
+### Master Database
+![Master_DB](readme-images/Master_DB.png "Title")
+<hr />
 
 ## Order API
-### Database diagram
-![Order API Database schema](readme-images/SadaParcel%20-%20Order%20API.png "Title")
 
 ### `OrderEnity`
 ![Order API - OrderEntity](readme-images/OrderManagementAPI%20-%20OrderEntity.png "Title")
@@ -52,10 +53,8 @@
 <hr />
 
 # Internal
-## Item Management API
-### Database Diagram
-![Item Management API Database schema](readme-images/SadaParcel%20-%20ItemAPI__ItemManagementAPI.png "Title")
 
+## Item Management API
 ### `ItemManagementLineEntity`
 ![Item Management API - ItemManagementLineEntity](readme-images/ItemManagementAPI%20-%20ItemManagementLineEntity.png "Title")
 
