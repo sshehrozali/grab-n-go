@@ -1,6 +1,8 @@
 <hr />
-### Master Database
-![Master_DB](readme-images/Master%DB.png "Title")
+
+# Master Database
+![Master_DB](readme-images/Master_DB.png "Title")
+
 <hr />
 
 # Public
@@ -31,8 +33,6 @@
 * #### POST
   Accepts `@ResquestBody` `List<OrderEntity>`
 
-<hr /> 
-
 ## Offer API
 **No Entity created**.
 * #### GET
@@ -55,8 +55,6 @@
   Accepts `@RequestBody` `List<ItemManagementLineEntity>`
 * #### DELETE
   Accepts `@RequestBody` `ItemManagementDeleteModel` -> `List<Integer> itemIds`. Will delete all items with matching `itemIds.get()`
-
-<hr />
 
 ## Offer Management API
 ### `OfferManagementEntity`
